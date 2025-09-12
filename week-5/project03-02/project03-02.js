@@ -1,0 +1,51 @@
+/*    JavaScript 7th Edition
+      Chapter 3
+      Project 03-02
+
+      Application to generate a slide gallery
+      Author: Jarren Bess
+      Date: Sep 12, 2025
+
+      Filename: project03-02.js
+*/
+
+let captions = new Array(14);
+captions[0] = "International Space Station fourth expansion [2009]";
+captions[1] = "Assembling the International Space Station [1998]";
+captions[2] = "The Atlantis docks with the ISS [2001]";
+captions[3] = "The Atlantis approaches the ISS [2000]";
+captions[4] = "The Atlantis approaches the ISS [2000]";
+captions[5] = "International Space Station over Earth [2002]";
+captions[6] = "The International Space Station first expansion [2002]";
+captions[7] = "Hurricane Ivan from the ISS [2008]";
+captions[8] = "The Soyuz spacecraft approaches the ISS [2005]";
+captions[9] = "The International Space Station from above [2006]";
+captions[10] = "Maneuvering in space with the Canadarm2 [2006]";
+captions[11] = "The International Space Station second expansion [2006]";
+captions[12] = "The International Space Station third expansion [2007]";
+captions[13] = "The ISS over the Ionian Sea [2007]";
+
+let htmlCode = "";
+
+/* The book shows you what html to add to the variable htmlCode but it is not formatted correctly
+(unless that is intentional) as it adds the i variable to the end of the image path as if that is
+the way it should be done. It shows the same thing regarding the caption placing the arr[i]
+directly within the figcaption element without showing that concatenation is needed. Because of
+this I was trying to solve the problem without using any concatenation. After several attempts
+including trying concatenation I used copilot to help. Its solution showed I was forgetting quotation
+marks after I included the plus sign for concatenation.
+*/
+
+for (let i = 0; i < captions.length; i++) {
+  htmlCode +=
+    "<figure>" +
+    "<img src='slide" +
+    i +
+    ".jpg' alt='' />" +
+    "<figcaption>" +
+    captions[i] +
+    "</figcaption>" +
+    "</figure>";
+}
+
+document.getElementById("gallery").innerHTML = htmlCode;
